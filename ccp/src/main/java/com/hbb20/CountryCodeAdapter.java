@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.futuremind.recyclerviewfastscroll.SectionTitleProvider;
@@ -216,7 +217,7 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
         RelativeLayout relativeLayout_main,rootRowCountryTile;
         TextView textView_name, textView_code;
         ImageView imageViewFlag;
-        LinearLayout linearFlagHolder;
+        CardView cardViewFlagHolder;
         View divider;
 
         public CountryCodeViewHolder(View itemView) {
@@ -226,7 +227,7 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
             textView_name = (TextView) relativeLayout_main.findViewById(R.id.textView_countryName);
             textView_code = (TextView) relativeLayout_main.findViewById(R.id.textView_code);
             imageViewFlag = (ImageView) relativeLayout_main.findViewById(R.id.image_flag);
-            linearFlagHolder = (LinearLayout) relativeLayout_main.findViewById(R.id.linear_flag_holder);
+            cardViewFlagHolder = (CardView) relativeLayout_main.findViewById(R.id.cardView_flag_holder);
             divider = relativeLayout_main.findViewById(R.id.preferenceDivider);
 
             if (codePicker.getDialogTextColor() != 0) {
@@ -287,16 +288,16 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
                 textView_code.setText("+" + ccpCountry.getPhoneCode());
 
                 if (!codePicker.getCcpDialogShowFlag() || codePicker.ccpUseEmoji) {
-                    linearFlagHolder.setVisibility(View.GONE);
+                    cardViewFlagHolder.setVisibility(View.GONE);
                 } else {
-                    linearFlagHolder.setVisibility(View.VISIBLE);
+                    cardViewFlagHolder.setVisibility(View.VISIBLE);
                     imageViewFlag.setImageResource(ccpCountry.getFlagID());
                 }
             } else {
                 divider.setVisibility(View.VISIBLE);
                 textView_name.setVisibility(View.GONE);
                 textView_code.setVisibility(View.GONE);
-                linearFlagHolder.setVisibility(View.GONE);
+                cardViewFlagHolder.setVisibility(View.GONE);
             }
         }
 

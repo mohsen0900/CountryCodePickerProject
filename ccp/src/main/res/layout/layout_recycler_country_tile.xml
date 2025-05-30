@@ -5,31 +5,33 @@
     android:layout_height="wrap_content"
     android:clickable="true">
 
-    <LinearLayout
-        android:id="@+id/linear_flag_holder"
-        android:layout_width="40dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="@dimen/google_1x"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_flag_holder"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/google_1x"
+        android:layout_marginLeft="@dimen/google_1x"
         android:visibility="gone"
-        android:gravity="center">
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp">
 
         <ImageView
             android:id="@+id/image_flag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/flag_india" />
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textView_countryName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/linear_flag_holder"
+        android:layout_toEndOf="@+id/cardView_flag_holder"
         android:layout_toLeftOf="@+id/textView_code"
-        android:layout_toRightOf="@+id/linear_flag_holder"
+        android:layout_toRightOf="@+id/cardView_flag_holder"
         android:layout_toStartOf="@+id/textView_code"
         android:layout_marginStart="@dimen/google_1x"
         android:layout_marginLeft="@dimen/google_1x"

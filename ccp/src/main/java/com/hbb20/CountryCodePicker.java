@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.IdRes;
+import androidx.cardview.widget.CardView;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -64,7 +65,7 @@ public class CountryCodePicker extends RelativeLayout {
     ImageView imageViewArrow;
     ImageView imageViewFlag;
     LinearLayout linearFlagBorder;
-    LinearLayout linearFlagHolder;
+    CardView cardViewFlagHolder;
     CCPCountry selectedCCPCountry;
     CCPCountry defaultCCPCountry;
     RelativeLayout relativeClickConsumer;
@@ -221,7 +222,7 @@ public class CountryCodePicker extends RelativeLayout {
         holder = (RelativeLayout) holderView.findViewById(R.id.countryCodeHolder);
         imageViewArrow = (ImageView) holderView.findViewById(R.id.imageView_arrow);
         imageViewFlag = (ImageView) holderView.findViewById(R.id.image_flag);
-        linearFlagHolder = (LinearLayout) holderView.findViewById(R.id.linear_flag_holder);
+        cardViewFlagHolder = (CardView) holderView.findViewById(R.id.cardView_flag_holder);
         linearFlagBorder = (LinearLayout) holderView.findViewById(R.id.linear_flag_border);
         relativeClickConsumer = (RelativeLayout) holderView.findViewById(R.id.rlClickConsumer);
         codePicker = this;
@@ -2119,12 +2120,12 @@ public class CountryCodePicker extends RelativeLayout {
     private void refreshFlagVisibility() {
         if (showFlag) {
             if (ccpUseEmoji) {
-                linearFlagHolder.setVisibility(GONE);
+                cardViewFlagHolder.setVisibility(GONE);
             } else {
-                linearFlagHolder.setVisibility(VISIBLE);
+                cardViewFlagHolder.setVisibility(VISIBLE);
             }
         } else {
-            linearFlagHolder.setVisibility(GONE);
+            cardViewFlagHolder.setVisibility(GONE);
         }
     }
 

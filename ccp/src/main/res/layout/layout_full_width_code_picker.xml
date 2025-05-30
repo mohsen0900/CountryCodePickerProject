@@ -15,33 +15,31 @@
         android:padding="@dimen/ccp_padding"
         >
 
-        <LinearLayout
-            android:id="@+id/linear_flag_holder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_flag_holder"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:layout_gravity="center_vertical"
             android:layout_marginEnd="@dimen/google_1x"
             android:layout_marginRight="@dimen/google_1x"
-            >
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:id="@+id/linear_flag_border"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                >
+                android:background="@android:color/transparent">
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <ImageView
                     android:id="@+id/image_flag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="18dp"
-                    android:layout_margin="0.5dp"
-                    android:adjustViewBounds="true"
-                    tools:src="@drawable/flag_india"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/flag_india" />
+
             </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <!--</LinearLayout>-->
         <TextView
@@ -51,8 +49,8 @@
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/imageView_arrow"
             android:layout_toLeftOf="@+id/imageView_arrow"
-            android:layout_toEndOf="@+id/linear_flag_holder"
-            android:layout_toRightOf="@+id/linear_flag_holder"
+            android:layout_toEndOf="@+id/cardView_flag_holder"
+            android:layout_toRightOf="@+id/cardView_flag_holder"
             android:gravity="center"
             android:text="(IN) +91"
             android:textColor="@android:color/black"
